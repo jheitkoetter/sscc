@@ -1,0 +1,134 @@
+.\" $Id: cda.1,v 1.1 2016/03/31 17:01:22 jabber Exp $
+.ds ED Edition 1.0
+.ds UP April 2016
+.ds VE 1.0
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.TH SSCC 1 "\*(UP\&" "Version \*(VE\&" "USER COMMANDS"
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"     German umlauts
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.\"     usage: \*(ae\&
+.if t .ds ae ä
+.if n .ds ae ae
+.\"     usage: \*(oe\&
+.if t .ds oe ö
+.if n .ds oe oe
+.\"     usage: \*(ue\&
+.if t .ds ue ü
+.if n .ds ue ue
+.\"     usage: \*(Ae\&
+.if t .ds Ae Ä
+.if n .ds Ae Ae
+.\"     usage: \*(Oe\&
+.if t .ds Oe Ö
+.if n .ds Oe Oe
+.\"     usage: \*(Ue\&
+.if t .ds Ue Ü
+.if n .ds Ue Ue
+.\"     usage: \*(ss\&
+.if t .ds ss ß
+.if n .ds ss ss
+.\"
+.\"     usage: \*(cc\&
+.if t .ds cc ç
+.if n .ds cc ,c
+.\"
+.\" The TeX macros
+.if t .ds Bi B\s-2IB\s+2T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Bi BibTeX
+.\"
+.if t .ds Sc S\s-2CRIBE\s+2
+.if n .ds Sc Scribe
+.\" \(*Sc\&
+.if t .ds Te T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds Te TeX
+.\" 
+.if t .ds La L\\h'-0.3334m'\\v'-0.10v'\s-2A\s+2\\v'+0.10v'\\h'-0.1667m'T\\h'-0.1667m'\\v'0.20v'E\\v'-0.20v'\\h'-0.125m'X
+.if n .ds La LaTeX
+.\" 
+.if t .ds Ja J\s-2AVA\s+2
+.if n .ds Ja Java
+.\" 
+.\" -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+.SH NAME
+sscc \- Secure Shipping Container Code algorithm
+.\"
+.SH SYNOPSIS
+.I  sscc
+.B [-dvs]
+.I string(s)
+.\"
+.SH DESCRIPTION
+.I sscc
+is a tool for generating
+.I check digits
+from
+.B strings
+given at command line. It implements SSCC (serial shipping
+container code) check digit used by all industries using bar codes.
+And also comes with a variant of Luhn's algorithm,
+which is used by the credit card industry.
+It mainly serves educational purposes.
+.\"
+.SH OPTIONS
+.I sscc
+recognizes the following options:
+.TP
+.I -d
+debug mode.
+.TP
+.I -v
+print version.
+.TP
+.I -s
+strict mode. Only generate SSCC check digits for input strings of the
+correct length, as specified by GS1.org, i.e.
+GTIN-8 (7),
+GTIN-12 (11),
+GTIN-13 (12),
+GTIN-14 (13),
+GSIN (16),
+SSCC (17).
+.TP
+To give no option at all is fine, as long as you provide at least one parameter.
+.\"
+.SH "SEE ALSO"
+.LP
+.BR md5 (1),
+.BR openssl (1)
+.\"
+.SH AUTHOR
+Copyright 
+.if t \(co 
+.if n (c)
+2016 J\*(oe\&rg Heitk\*(oe\&tter (joke). All rights reserved.
+.nf
+Send bugs, comments, and all the fish to <joke@verizon.com>
+.fi
+.\"
+.SH CREDITS
+.LP
+Thanks for thoughtful comments from
+*FIXME*
+.\"
+.SH AVAILABILITY
+.I cda
+is on GitHub at
+.B http://github.com/jheitkoetter/cda.git
+.LP
+This work is protected by the terms of the
+.SM GNU
+General Public License. Please refer to the
+.SM COPYING
+file accompanying the sources of this software package for a lengthy, boring
+but, absolute complete description.
+.\"
+.SH FINAL NOTE
+One of the "founding beliefs" of the Internet Engineering Task Force (IETF)
+is David Clark's quote
+.B "We believe in rough consensus and running code."
+.TP
+Happy hacking and have fun!
+.\"

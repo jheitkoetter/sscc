@@ -1,0 +1,58 @@
+# README file for sscc version 1.0
+# Copyright (c) 2016 Joerg Heitkoetter (joke). All rights reserved.
+
+SSCC(1)                          USER COMMANDS                         SSCC(1)
+
+NAME
+       sscc - Secure Shipping Container Code algorithm
+
+SYNOPSIS
+       sscc [-dvs] string(s)
+
+DESCRIPTION
+       sscc  is  a tool for generating check digits from strings given at com-
+       mand line. It implements SSCC (serial shipping  container  code)  check
+       digit  used  by  all industries using bar codes.  And also comes with a
+       variant of Luhn's algorithm, which is used by the credit card industry.
+       It mainly serves educational purposes.
+
+OPTIONS
+       sscc recognizes the following options:
+
+       -d     debug mode.
+
+       -v     print version.
+
+       -s     strict  mode.  Only generate SSCC check digits for input strings
+              of the correct length, as specified  by  GS1.org,  i.e.   GTIN-8
+              (7),  GTIN-12  (11), GTIN-13 (12), GTIN-14 (13), GSIN (16), SSCC
+              (17).
+
+       To give no option at all is fine, as long as you provide at  least  one
+       parameter.
+
+SEE ALSO
+       md5(1), openssl(1)
+
+AUTHOR
+       Copyright (c) 2016 Joerg Heitkoetter (joke). All rights reserved.
+       Send bugs, comments, and all the fish to <joke@verizon.com>
+
+CREDITS
+       Thanks for thoughtful comments from *FIXME*
+
+AVAILABILITY
+       cda is on GitHub at http://github.com/jheitkoetter/cda.git
+
+       This  work is protected by the terms of the GNU General Public License.
+       Please refer to the COPYING file accompanying the sources of this soft-
+       ware package for a lengthy, boring but, absolute complete description.
+
+FINAL NOTE
+       One  of  the  "founding beliefs" of the Internet Engineering Task Force
+       (IETF) is David Clark's quote We believe in rough consensus and running
+       code.
+
+       Happy hacking and have fun!
+
+Version 1.0                       April 2016                           SSCC(1)
